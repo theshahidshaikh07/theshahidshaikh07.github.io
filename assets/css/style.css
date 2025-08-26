@@ -98,6 +98,7 @@ ul {
 
 a {
   text-decoration: none;
+  color:inherit;
 }
 
 button {
@@ -221,6 +222,75 @@ body.light-theme {
 }
 
 /*=============== HEADER & NAV===============*/
+/* .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
+  /* height: var(--header-height); */
+  /* background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+  transition: 0.4s;
+}
+
+.nav__logo:hover {
+  color: var(--first-color-alt);
+}
+
+.nav__menu {
+  position: fixed;
+  bottom: 1rem;
+  background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+  width: 90%;
+  border-radius: 4rem;
+  padding: 1rem 2.25rem;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__link {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  padding: 0.4rem;
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition: 0.4s;
+  display: flex;
+  border-radius: 5rem;
+} */
+
+/* Active link */
+/* .active-link {
+  background: linear-gradient(
+    180deg,
+    hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
+    hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
+  );
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.4);
+  border-radius: 5rem;
+
+  color: var(--title-color);
+
+} */
 
 .header {
   position: fixed;
@@ -246,11 +316,11 @@ body.light-theme {
 
 .nav__logo {
   display: inline-block;
-  margin-left: -55px;
-  margin-top: 18px;
-  margin-bottom: 10px;
-  width: 160px; /* Adjust width as needed */
-  height: 90px; /* Adjust height as needed */
+  margin-left: -15px;
+  margin-top:12px;
+  margin-bottom: 12px;
+  width: 60-px; /* Adjust width as needed */
+  height: 60px; /* Adjust height as needed */
   transition: 0.4s;
   
 }
@@ -464,7 +534,50 @@ body.light-theme {
 
 
 /*=============== ABOUT ===============*/
+/* .about__container {
+  row-gap: 2.5rem;
+}
 
+.about__img {
+  width: 220px;
+  border-radius: 1.5rem;
+  justify-self: center;
+}
+
+.about__data {
+  text-align: center;
+}
+
+.about__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.about__box {
+  background-color: var(--container-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.about__icon {
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+
+.about__title {
+  font-size: var(--small-font-size);
+}
+
+.about__subtitle {
+  font-size: var(--tiny-font-size);
+}
+
+.about__description {
+  margin-bottom: 2rem;
+} */
 
 .about__container {
   row-gap: 2.5rem;
@@ -643,6 +756,7 @@ body.light-theme {
     row-gap: 2rem;
     padding-top: 1rem;
   }
+  
 
   .achievments__content {
     background-color: var(--container-color);
@@ -888,6 +1002,13 @@ body.light-theme {
 .work__img {
   border-radius: 1rem;
   margin-bottom: 0.75rem;
+ 
+}
+@media (min-width: 768px) {
+  .work__img {
+    width: 300px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+  }
 }
 
 .work__title {
@@ -921,11 +1042,11 @@ body.light-theme {
   color: var(--body-color);
 }
 .work__description {
-  font-size: 14px; 
-  color: #333; 
-  margin-top: 10px; 
-  display: block; 
-  line-height: 1.5; 
+  font-size: 14px; /* Font size */
+  color: #333; /* Text color */
+  margin-top: 10px; /* Add space between the title and description */
+  display: block; /* Ensure the description spans the full width */
+  line-height: 1.5; /* Set line height for better readability */
 }
 
 
@@ -1282,9 +1403,31 @@ body.light-theme {
   .contact__form {
     width: 340px;
   }
-  
+  /* .contact__info {
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+
+  .contact__form {
+    width: 360px;
+    margin: 0 auto;
+  } */
 }
 
+/* @media screen and (min-width: 767px) {
+  /* .work__container {
+    grid-template-columns: repeat(2, max-content);
+  } */
+
+/* .contact__info {
+    grid-template-columns: 300px;
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(2, 325px);
+    justify-content: center;
+  }
+} */
 
 /* For large devices */
 @media screen and (min-width: 992px) {
