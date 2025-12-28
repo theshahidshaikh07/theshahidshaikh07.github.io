@@ -25,6 +25,12 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("wrLIAOyI43elWgH7U");
+        })();
+    </script>
     <title> Shahid Shaikh</title>
 
 </head>
@@ -1339,20 +1345,20 @@
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
 
-                    <form action="" class="contact__form">
+                    <form action="" class="contact__form" id="contact-form">
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder="Enter name" class="contact__form-input">
+                            <input type="text" name="user_name" placeholder="Enter name" class="contact__form-input">
                         </div>
 
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Mail</label>
-                            <input type="text" placeholder="Enter email" class="contact__form-input">
+                            <input type="email" name="user_email" placeholder="Enter email" class="contact__form-input">
                         </div>
 
                         <div class="contact__form-div contact__form-area">
                             <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your Message"
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Write your Message"
                                 class="contact__form-input "></textarea>
                         </div>
 

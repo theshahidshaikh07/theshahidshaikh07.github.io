@@ -247,12 +247,43 @@ sr.reveal(`.footer, footer__container`, {
 
 document.querySelectorAll('.work__button').forEach(button => {
   button.addEventListener('click', () => {
-      const modal = button.nextElementSibling;
-      modal.classList.add('active-modal');
+    const modal = button.nextElementSibling;
+    modal.classList.add('active-modal');
 
-      modal.querySelector('.work__modal-close').addEventListener('click', () => {
-          modal.classList.remove('active-modal');
-      });
+    modal.querySelector('.work__modal-close').addEventListener('click', () => {
+      modal.classList.remove('active-modal');
+    });
   });
 });
+
+
+
+
+/*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form')
+
+const sendEmail = (e) => {
+  e.preventDefault()
+
+  // EmailJS Configuration
+  const serviceID = 'service_pw61r68'
+  const templateID = 'template_aikhdin'
+
+  emailjs.sendForm(serviceID, templateID, '#contact-form')
+    .then(() => {
+      // Show success message
+      alert('Message sent successfully ✅')
+
+      // Reset the form after sending
+      setTimeout(() => {
+        contactForm.reset()
+      }, 3000)
+    }, (error) => {
+      // Show error message
+      alert('OOPS! SOMETHING HAS FAILED...', error)
+    })
+}
+
+contactForm.addEventListener('submit', sendEmail)
+
 
