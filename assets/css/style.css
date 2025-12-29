@@ -1597,23 +1597,32 @@ body.light-theme {
 .gallery__container {
   padding-top: 1rem;
   display: grid;
-  gap: 1rem;
-  /* Mobile: 1 column by default */
-  grid-template-columns: 1fr;
-  grid-auto-rows: 250px;
-  /* Standard height for mobile cards */
+  gap: 0.5rem;
+  /* Mobile: 2 columns for clean, readable layout */
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 100px;
+  /* Comfortable row height for mobile */
+  grid-auto-flow: dense;
+  /* Fills gaps automatically */
 }
 
 .gallery__card {
   background-color: var(--container-color);
   padding: 0;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
+  /* Slightly smaller radius for mobile */
   position: relative;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 4px 16px hsla(var(--second-hue), 48%, 8%, .1);
   height: 100%;
   width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.gallery__card:active {
+  transform: scale(0.98);
+  /* Tap feedback for mobile */
 }
 
 .gallery__img {
@@ -1629,10 +1638,33 @@ body.light-theme {
   object-fit: contain;
 }
 
-/* Hero Item spanning full width */
-.gallery__card--main {
-  /* On mobile, it's just normal. On desktop, we can make it span or keep it flow.
-     For true Bento feel, let's keep it in the flow but maybe ensure it's first. */
+/* Mobile Bento Spans - Optimized for 2-column layout */
+.gallery__card--wide {
+  grid-column: span 2;
+  /* Full width */
+  grid-row: span 2;
+}
+
+.gallery__card--tall {
+  grid-row: span 3;
+  /* Taller cards */
+}
+
+.gallery__card--big {
+  grid-column: span 2;
+  /* Full width */
+  grid-row: span 3;
+}
+
+.gallery__card--medium {
+  grid-column: span 2;
+  /* Full width on mobile */
+  grid-row: span 2;
+}
+
+.gallery__card--span-3 {
+  grid-column: span 2;
+  /* Full width on mobile */
 }
 
 .gallery__overlay {
@@ -1647,14 +1679,17 @@ body.light-theme {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 1rem;
+  /* Smaller padding for mobile */
   opacity: 0;
   transition: .3s;
 }
 
 .gallery__title {
   color: #fff;
-  font-size: var(--h3-font-size);
+  font-size: var(--normal-font-size);
+  /* Smaller for mobile */
+  font-weight: var(--font-semibold);
   margin-bottom: 0.25rem;
   transform: translateY(20px);
   transition: .3s;
@@ -1694,59 +1729,89 @@ body.light-theme .gallery__title {
 /* Responsive Bento Grid */
 @media screen and (min-width: 600px) {
   .gallery__container {
-    grid-template-columns: repeat(2, 1fr);
-    /* Tablet: 2 columns */
-    grid-auto-rows: 250px;
+    gap: 0.75rem;
+    /* Tablet: slightly larger gap */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tablet: 3 columns */
+    grid-auto-rows: 110px;
+    /* Taller rows for tablet */
   }
 
-  /* On tablet, 'wide' can span full width */
+  .gallery__card {
+    border-radius: 1rem;
+    /* Larger radius for tablet */
+  }
+
+  /* Tablet-specific spans */
   .gallery__card--wide {
     grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gallery__card--tall {
+    grid-row: span 4;
   }
 
   .gallery__card--big {
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 4;
+  }
+
+  .gallery__card--medium {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .gallery__card--span-3 {
+    grid-column: span 3;
+  }
+
+  /* Tablet overlay adjustments */
+  .gallery__overlay {
+    padding: 1.25rem;
+  }
+
+  .gallery__title {
+    font-size: var(--h3-font-size);
   }
 }
 
 @media screen and (min-width: 992px) {
   .gallery__container {
+    gap: 1rem;
+    /* Desktop: larger gap */
     grid-template-columns: repeat(4, 1fr);
-    /* Desktop: 4 columns for true bento flexibility */
+    /* Desktop: 4 columns for full bento */
     grid-auto-rows: 120px;
     /* Granular rows for better aspect ratio control */
-    grid-auto-flow: dense;
-    /* Crucial: Fills gaps automatically */
   }
 
-  /* Bento Spans */
+  /* Desktop-specific spans */
   .gallery__card--wide {
     grid-column: span 2;
     grid-row: span 2;
-    /* ~250px height */
   }
 
   .gallery__card--tall {
     grid-row: span 4;
-    /* ~530px height */
   }
 
   .gallery__card--big {
     grid-column: span 2;
     grid-row: span 4;
-    /* Large Square */
   }
 
-  /* NEW: Perfect 4:3 Landscape */
   .gallery__card--medium {
     grid-column: span 2;
     grid-row: span 3;
-    /* ~390px height */
   }
 
-  /* Specific Span Utilities */
   .gallery__card--span-3 {
     grid-column: span 3;
+  }
+
+  /* Desktop overlay adjustments */
+  .gallery__overlay {
+    padding: 1.5rem;
   }
 }
