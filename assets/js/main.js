@@ -224,6 +224,13 @@ sr.reveal(`.testimonial__container`, {
   distance: "30px",
 });
 
+sr.reveal(`.gallery__card`, {
+  delay: 100,
+  scale: 0.9,
+  origin: "bottom",
+  distance: "30px",
+});
+
 sr.reveal(`.contact__info, .contact__title-info`, {
   delay: 100,
   scale: 0.9,

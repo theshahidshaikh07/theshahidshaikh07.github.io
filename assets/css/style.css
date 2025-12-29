@@ -18,7 +18,8 @@
   --lig: 75%;
   --second-hue: 219;
   --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
-  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%);
+  /* -4% */
   --title-color: hsl(var(--second-hue), 15%, 95%);
   --text-color: hsl(var(--second-hue), 8%, 75%);
   --text-color-light: hsl(var(--second-hue), 4%, 55%);
@@ -82,7 +83,8 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: 0.4s; /* for light mode animation */
+  transition: 0.4s;
+  /* for light mode animation */
 }
 
 h1,
@@ -98,7 +100,7 @@ ul {
 
 a {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 button {
@@ -184,6 +186,7 @@ body.light-theme {
 .light-theme::-webkit-scrollbar {
   background-color: hsl(var(--second-hue), 8%, 80%);
 }
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 968px;
@@ -227,8 +230,8 @@ body.light-theme {
   top: 0;
   left: 0;
   width: 100%; */
-  /* height: var(--header-height); */
-  /* background-color: var(--body-color);
+/* height: var(--header-height); */
+/* background-color: var(--body-color);
   z-index: var(--z-fixed);
   transition: 0.4s;
 }
@@ -317,17 +320,21 @@ body.light-theme {
 .nav__logo {
   display: inline-block;
   margin-left: -15px;
-  margin-top:12px;
+  margin-top: 12px;
   margin-bottom: 12px;
-  width: 60-px; /* Adjust width as needed */
-  height: 60px; /* Adjust height as needed */
+  width: 60-px;
+  /* Adjust width as needed */
+  height: 60px;
+  /* Adjust height as needed */
   transition: 0.4s;
-  
+
 }
 
 .nav__logo img {
-  width: 100%; /* Ensures the image fills its container */
-  height: 100%; /* Ensures the image fills its container */
+  width: 100%;
+  /* Ensures the image fills its container */
+  height: 100%;
+  /* Ensures the image fills its container */
 }
 
 
@@ -363,11 +370,9 @@ body.light-theme {
 
 /* Active link */
 .active-link {
-  background: linear-gradient(
-    180deg,
-    hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
-    hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
-  );
+  background: linear-gradient(180deg,
+      hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
+      hsla(var(--first-hue), var(--sat), var(--lig), 0.2));
   box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.4);
   border-radius: 5rem;
 
@@ -381,11 +386,9 @@ body.light-theme {
 
 /* Hover styles for all links */
 .nav__link:hover {
-  background: linear-gradient(
-    180deg,
-    hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
-    hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
-  );
+  background: linear-gradient(180deg,
+      hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
+      hsla(var(--first-hue), var(--sat), var(--lig), 0.2));
   box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.4);
   border-radius: 5rem;
   color: var(--title-color);
@@ -402,9 +405,9 @@ body.light-theme {
 .home__container {
   position: relative;
   row-gap: 4.5rem;
-  padding-top: 1rem; 
-  
-  
+  padding-top: 1rem;
+
+
 }
 
 .home__data {
@@ -439,7 +442,7 @@ body.light-theme {
 
 .home__handle {
   justify-self: center;
-  
+
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -627,7 +630,8 @@ body.light-theme {
 /* Media Query for Mobile View */
 @media screen and (max-width: 768px) {
   .about__img {
-    display: none; /* Hide the image on mobile view */
+    display: none;
+    /* Hide the image on mobile view */
   }
 }
 
@@ -692,7 +696,7 @@ body.light-theme {
   padding-top: 1rem;
 }
 
- .education__content {
+.education__content {
   background-color: var(--container-color);
   padding: 3rem;
   border-radius: 1.25rem;
@@ -743,68 +747,68 @@ body.light-theme {
 
 @media only screen and (max-width: 600px) {
   .education__data {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .year {
-      margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
-  
-  .achievments__container {
-    row-gap: 2rem;
-    padding-top: 1rem;
-  }
-  
 
-  .achievments__content {
-    background-color: var(--container-color);
-    padding: 3rem;
-    border-radius: 1.25rem;
-    justify-self: center;
-  }
-  
-  .achievments__title {
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-    color: var(--first-color);
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .achievments__column {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .achievments__data {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-    
-  }
-  
-  .achievments .bxs-badge-check {
-    font-size: 1rem;
-    color: var(--first-color);
-  }
-  
-  .achievments__name {
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-    line-height: 18px;
-    margin: 0;
-   }  
-  
-  
-   .achievments__level {
-    font-size: var(--small-font-size);
-  }
-   
-  
-  
+.achievments__container {
+  row-gap: 2rem;
+  padding-top: 1rem;
+}
+
+
+.achievments__content {
+  background-color: var(--container-color);
+  padding: 3rem;
+  border-radius: 1.25rem;
+  justify-self: center;
+}
+
+.achievments__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.achievments__column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.achievments__data {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+
+}
+
+.achievments .bxs-badge-check {
+  font-size: 1rem;
+  color: var(--first-color);
+}
+
+.achievments__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  line-height: 18px;
+  margin: 0;
+}
+
+
+.achievments__level {
+  font-size: var(--small-font-size);
+}
+
+
+
 
 
 
@@ -832,8 +836,8 @@ body.light-theme {
   display: flex;
   align-items: center;
   column-gap: 0.25rem;
- 
-  cursor:pointer;
+
+  cursor: pointer;
 }
 
 .services__button:hover .services__icon {
@@ -871,7 +875,8 @@ body.light-theme {
   z-index: var(--z-modal);
   visibility: hidden;
   opacity: 0;
-  overflow-y: auto; /* Add overflow-y property to enable vertical scrolling */
+  overflow-y: auto;
+  /* Add overflow-y property to enable vertical scrolling */
 }
 
 .services__modal-content {
@@ -879,15 +884,19 @@ body.light-theme {
   padding: 4.5rem 1.5rem 2.5rem;
   border-radius: 1.5rem;
   position: relative;
-  max-width: 90%; /* Limit the maximum width of the modal content */
-  max-height: 80%; /* Limit the maximum height of the modal content */
-  overflow-y: auto; /* Enable overflow for modal content */
+  max-width: 90%;
+  /* Limit the maximum width of the modal content */
+  max-height: 80%;
+  /* Limit the maximum height of the modal content */
+  overflow-y: auto;
+  /* Enable overflow for modal content */
 }
 
 .services__modal-list {
   display: grid;
   row-gap: 0.75rem;
-  overflow-y: auto; /* Enable overflow for the list within the modal */
+  overflow-y: auto;
+  /* Enable overflow for the list within the modal */
 }
 
 .services__modal-item {
@@ -898,24 +907,29 @@ body.light-theme {
 
 .services__modal-info {
   font-size: var(--small-font-size);
-  word-wrap: break-word; /* Allow long content to wrap within the modal */
+  word-wrap: break-word;
+  /* Allow long content to wrap within the modal */
 }
 
 /* Hide scrollbar */
 .services__modal::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  display: none;
+  /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .services__modal-content::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  display: none;
+  /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .services__modal {
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
 }
 
 .services__modal-content {
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
 }
 
 
@@ -963,6 +977,7 @@ body.light-theme {
   color: var(--first-color);
   cursor: pointer;
 }
+
 /*Active modal*/
 
 .active-modal {
@@ -1002,12 +1017,15 @@ body.light-theme {
 .work__img {
   border-radius: 1rem;
   margin-bottom: 0.75rem;
- 
+
 }
+
 @media (min-width: 768px) {
   .work__img {
-    width: 300px; /* Adjust width as needed */
-    height: 150px; /* Adjust height as needed */
+    width: 300px;
+    /* Adjust width as needed */
+    height: 150px;
+    /* Adjust height as needed */
   }
 }
 
@@ -1041,12 +1059,18 @@ body.light-theme {
   background-color: var(--first-color);
   color: var(--body-color);
 }
+
 .work__description {
-  font-size: 14px; /* Font size */
-  color: #333; /* Text color */
-  margin-top: 10px; /* Add space between the title and description */
-  display: block; /* Ensure the description spans the full width */
-  line-height: 1.5; /* Set line height for better readability */
+  font-size: 14px;
+  /* Font size */
+  color: #333;
+  /* Text color */
+  margin-top: 10px;
+  /* Add space between the title and description */
+  display: block;
+  /* Ensure the description spans the full width */
+  line-height: 1.5;
+  /* Set line height for better readability */
 }
 
 
@@ -1186,6 +1210,7 @@ body.light-theme {
 .contact__form-area textarea {
   resize: none;
 }
+
 /*=============== FOOTER ===============*/
 .footer {
   background-color: var(--first-color);
@@ -1403,6 +1428,7 @@ body.light-theme {
   .contact__form {
     width: 340px;
   }
+
   /* .contact__info {
     grid-template-columns: 350px;
     justify-content: center;
@@ -1456,6 +1482,7 @@ body.light-theme {
   .home__img {
     width: 220px;
   }
+
   .home__social-link {
     padding: 0.4rem;
     font-size: 1.25rem;
@@ -1563,5 +1590,163 @@ body.light-theme {
     font-size: 1.25rem;
     padding: 0.4rem;
     border-radius: 0.5rem;
+  }
+}
+
+/*=============== GALLERY ===============*/
+.gallery__container {
+  padding-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  /* Mobile: 1 column by default */
+  grid-template-columns: 1fr;
+  grid-auto-rows: 250px;
+  /* Standard height for mobile cards */
+}
+
+.gallery__card {
+  background-color: var(--container-color);
+  padding: 0;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 16px hsla(var(--second-hue), 48%, 8%, .1);
+  height: 100%;
+  width: 100%;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures images fill the box without distortion */
+  transition: .5s;
+  display: block;
+}
+
+.gallery__img--contain {
+  object-fit: contain;
+}
+
+/* Hero Item spanning full width */
+.gallery__card--main {
+  /* On mobile, it's just normal. On desktop, we can make it span or keep it flow.
+     For true Bento feel, let's keep it in the flow but maybe ensure it's first. */
+}
+
+.gallery__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: .3s;
+}
+
+.gallery__title {
+  color: #fff;
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.25rem;
+  transform: translateY(20px);
+  transition: .3s;
+}
+
+.gallery__subtitle {
+  color: #ccc;
+  font-size: var(--smaller-font-size);
+  transform: translateY(20px);
+  transition: .3s;
+  transition-delay: .1s;
+}
+
+/* Hover effects */
+.gallery__card:hover .gallery__img {
+  transform: scale(1.1);
+}
+
+.gallery__card:hover .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__card:hover .gallery__title,
+.gallery__card:hover .gallery__subtitle {
+  transform: translateY(0);
+}
+
+/* Light Mode Support */
+body.light-theme .gallery__card {
+  box-shadow: 0 4px 16px hsla(var(--second-hue), 48%, 8%, .1);
+}
+
+body.light-theme .gallery__title {
+  color: #fff;
+}
+
+/* Responsive Bento Grid */
+@media screen and (min-width: 600px) {
+  .gallery__container {
+    grid-template-columns: repeat(2, 1fr);
+    /* Tablet: 2 columns */
+    grid-auto-rows: 250px;
+  }
+
+  /* On tablet, 'wide' can span full width */
+  .gallery__card--wide {
+    grid-column: span 2;
+  }
+
+  .gallery__card--big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .gallery__container {
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop: 4 columns for true bento flexibility */
+    grid-auto-rows: 120px;
+    /* Granular rows for better aspect ratio control */
+    grid-auto-flow: dense;
+    /* Crucial: Fills gaps automatically */
+  }
+
+  /* Bento Spans */
+  .gallery__card--wide {
+    grid-column: span 2;
+    grid-row: span 2;
+    /* ~250px height */
+  }
+
+  .gallery__card--tall {
+    grid-row: span 4;
+    /* ~530px height */
+  }
+
+  .gallery__card--big {
+    grid-column: span 2;
+    grid-row: span 4;
+    /* Large Square */
+  }
+
+  /* NEW: Perfect 4:3 Landscape */
+  .gallery__card--medium {
+    grid-column: span 2;
+    grid-row: span 3;
+    /* ~390px height */
+  }
+
+  /* Specific Span Utilities */
+  .gallery__card--span-3 {
+    grid-column: span 3;
   }
 }
